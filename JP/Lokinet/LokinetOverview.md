@@ -14,10 +14,11 @@ Lokinetは信頼されている権威者に頼らずに、ブロックチェー�
 | [Lokinetパブリックテストのガイド](../Lokinet/Guides/PublicTestingGuide.md)      | Lokinetパブリックテストの完全ガイド。                                                               |
 | [Linuxセットアップガイド](../Lokinet/Guides/lokinet-linux-guide.md)                                | Linux用Lokinetの準備。　                                                                         |
 | [Windowsセットアップガイド](../Lokinet/Guides/lokinet-windows-guide.md)| Windows用Lokinetの準備。 |
+| [macOSセットアップガイド](../Lokinet/Guides/lokinet-mac-guide.md)| macOS用Lokinetの準備。|
 | [Linux - 自分でコンパイルする](../Lokinet/Guides/Install.md)| Lokinetをソースコードから自分でコンパイルする方法。|
 | [SNAppへのアクセス](../Lokinet/Guides/AccessingSNApps.md)                       | SNAppにアクセスする方法。                                                                          |
 | [LokinetでIRCの使い方](../Lokinet/Guides/LokinetIRC.md)                  　     | Lokinetを介してIRCチャットと接続する方法。                                                         |
 | [SNAppをホストする](../Lokinet/Guides/HostingSNApps.md)                         | 自分のSNApp/秘匿サービスをホストする方法。                                                         |
 | [LLARPのGithub](https://github.com/loki-project/loki-network)                   | LLARP (低遅延の匿名ルーティングプロトコル)、レイヤ３オニオンルーティングプロトコル。               |
-| [テストネット・リレーを立ち上げる方法](../Lokinet/Guides/TestNetRelay.md)       | テストネットワーク上にリレーをホストする方法。                                                     |
+| [Lokinetルーター/リレーを立ち上げる方法](../Lokinet/Guides/TestNetRelay.md)       | テストネットワーク上にリレーをホストする方法。                                                     |
 | [Lokinet設定ファイル](../Lokinet/Guides/LokinetConfig.md)                       | このガイドは設定ファイル、そのセクション、キー、そして値を説明します。                             |
