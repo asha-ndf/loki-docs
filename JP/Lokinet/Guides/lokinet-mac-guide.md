@@ -13,23 +13,23 @@ description: このガイドで、耐シビル攻撃性を持つオニオンル�
 
 先ずは、ダウンロードしましたLokinet Macソフトウェアを実行してみて下さい。おそらくセキュリティーエラーが出るでしょう。
 
-![unidentified-developer](../../docs/assets/unidentified.png)
+![unidentified-developer](../../../docs/assets/unidentified.png)
 
 このエラーが表示される場合、システム設定を開いて、「セキュリティー」を検索してください。
 
 そして「セキュリティーとプライバシー設定」を開きます。
 
-![SecuritySettings](../../docs/assets/Security.png)
+![SecuritySettings](../../../docs/assets/Security.png)
 
 ウィンドウーの一番下に、「実行」ボタンをクリックしてLokinet Mac pkgに許可を与える。
 
-![Allow-Apps](../../docs/assets/allowapps.png)
+![Allow-Apps](../../../docs/assets/allowapps.png)
 
 ### 2.2 Lokinetをインストール
 
 次はインストールを続けます。
 
-![Install-Lokinet](../../docs/assets/installlokinet.png)
+![Install-Lokinet](../../../docs/assets/installlokinet.png)
 
 ## 3. ターミナルを開いてLokinetのMacOSバイナリーを実行します。
 
@@ -39,7 +39,7 @@ description: このガイドで、耐シビル攻撃性を持つオニオンル�
 sudo lokinet
 ```
 
-![Lokinet-MacOS-Guide4](../../docs/assets/images/MacOS-Lokinet4.png)
+![Lokinet-MacOS-Guide4](../../../docs/assets/images/MacOS-Lokinet4.png)
 
 ## 4. DNSを設定
 
@@ -54,7 +54,7 @@ DNSアドレスとして「127.0.0.1」を入力します：
 > 注意点：LokinetのDNSアドレスを追加する時、デフォルトDNSサーバーの上にして下さい。
 > 参考のため、下の画像を見て下さい。
 
-![MacOS-DNS](../../docs/assets/DNS.PNG)
+![MacOS-DNS](../../../docs/assets/DNS.PNG)
 
 ---
 
