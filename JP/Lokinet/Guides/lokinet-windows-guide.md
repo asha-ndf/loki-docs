@@ -1,7 +1,7 @@
 title：ロキドキュプログラミング| Lokinet Windowsインストールガイド| オニオンルーティング
 説明：このガイドで、耐シビル攻撃性を持つオニオンレーザーのLokinetをWindowsでインストールして、使えるようになります。
 
-＃Lokinetインストールガイド-Windows 10
+＃ Lokinetインストールガイド-Windows 10
 
 ## 1.最新のLokinet Windowsインストーラーをダウンロードします
 
