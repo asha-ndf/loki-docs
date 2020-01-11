@@ -11,7 +11,7 @@ title：ロキドキュプログラミング| Lokinet Windowsインストール�
 
 Lokinet-win32.exeをインストーラーを実行して、促されるとおりに許可を与える。このステップの間、Windows Defenderのウイルス対対策で除外を設定するか、ウィルス対対策ソンフトを完全に無効にするのをおすすめします。
 
-![lokinet-launcher-install](../docs/assets/Lokinet_launcher_install1.PNG)
+![lokinet-launcher-install](../../assets/Lokinet_launcher_install1.PNG)
 
 ![Lokinet-launcher-install2](../docs/assets/Lokinet-launcher-install2.PNG)
 
