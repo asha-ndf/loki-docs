@@ -13,7 +13,7 @@ Lokinet-win32.exeをインストーラーを実行して、促されるとおり
 
 ![lokinet-launcher-install](../../assets/Lokinet_launcher_install1.PNG)
 
-![Lokinet-launcher-install2](../docs/assets/Lokinet-launcher-install2.PNG)
+![Lokinet-launcher-install2](master/docs/assets/Lokinet-launcher-install2.PNG)
 
 ## 3.インストーをクリック
 
