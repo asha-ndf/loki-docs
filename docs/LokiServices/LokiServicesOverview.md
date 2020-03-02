@@ -20,6 +20,6 @@ If we take the above points to be true, and we can enforce aggressive punishment
 
 Example Loki Services:
 
-- [Loki Messenger](../LokiServices/Messenger.md)
+- [Session](../LokiServices/Messenger/Session.md)
 
 - [Blink Transactions](../LokiServices/Blink.md)

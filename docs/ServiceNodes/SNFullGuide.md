@@ -55,7 +55,7 @@ To understand what a [Service Node](SNOverview.md) is, you can refer to the [whi
 
 It is also worth noting that Service Nodes are quite basic at the moment, and operators will need to stay up to date with new updates to keep in line with software and hardware requirements. Once all of the updates are out, Service Nodes will also:
 
--   Route end user’s internet traffic, either as an exit node or relay in a novel mixnet.
+-   Route end user’s internet traffic, either as an exit node or relay.
 
 -   Monitor other Service Nodes and vote on their performance.
 
@@ -86,17 +86,18 @@ For most users, we assume that your home internet connection is relatively slow 
 
 Typically, the easiest and cheapest way to host a server outside of your home is to use a Virtual Private Server (VPS). There are thousands of options when it comes to VPS providers, but for now, just about any one will do. In the future, selection will be made more difficult because most providers will not allow exit node traffic, so we have compiled a list of exit node friendly providers to choose from if you want to stay with your provider for more than a few months.
 
-|Hosting Provider| Product Name | Cost Per Month $USD | Bandwidth Provided | Exit Friendliness Rating |
-|--------------------|-----------------|----------------------------|--------------------|-------|
-|Netcup|VPS 1000 G8|10.50|30 - 35 MiB’s|5 / 10
-|Online.net|Start-2-S-SSD|13.99|15 - 17 MiB’s|9 / 10|
-|Scaleway|START1-M|9.33|20 - 25 MiB’s|7 / 10
-|OVH|VPS SSD 2|7.61|9 - 1 MiB’s|9 / 10|
-|Leaseweb|Virtual Server XL|34.45|30 - 35 MiB’s|5 / 10
-|Digital Ocean|2 GB, 2 vCPUs|15|9 - 11 MiB’s|8 / 10
-|Feral Hosting|Neon Capability|19.68|9 - 11 MiB’s|9 / 10
-|Trabia|VDS-8G|38.54|9 - 11 MiB’s|8 / 10
-|Hetzner|EX41-SSD (30 TB)|39.71|40 - 80 MiB’s|4 / 10
+|Hosting Provider| Product Name | Cost Per Month $USD | Bandwidth Provided | Exit Friendliness Rating | Accepts Loki? |
+|--------------------|-----------------|----------------------------|--------------------|-------|----|
+|Netcup|VPS 1000 G8|10.50|30 - 35 MiB’s|5 / 10| |
+|Evolution Host| STARTER | 5.50 | 9 - 1 MiB’s | 9/10| YES |
+|Online.net|Start-2-S-SSD|13.99|15 - 17 MiB’s|9 / 10| |
+|Scaleway|START1-M|9.33|20 - 25 MiB’s|7 / 10| |
+|OVH|VPS SSD 2|7.61|9 - 1 MiB’s|9 / 10| |
+|Leaseweb|Virtual Server XL|34.45|30 - 35 MiB’s|5 / 10| |
+|Digital Ocean|2 GB, 2 vCPUs|15|9 - 11 MiB’s|8 / 10| |
+|Feral Hosting|Neon Capability|19.68|9 - 11 MiB’s|9 / 10| |
+|Trabia|VDS-8G|38.54|9 - 11 MiB’s|8 / 10| |
+|Hetzner|EX41-SSD (30 TB)|39.71|40 - 80 MiB’s|4 / 10| |
 
 >Note: We do not officially endorse any of these providers, this list is simply illustrative of some of the options currently available*
 
@@ -291,16 +292,10 @@ To exit out of the client click `CTRL + C`.
 
 We are going to need to fix our user "snode"s permissions with the loki-launcher.
 
-To do this we need to swap back to root:
-
-```
-su - root
-```
-
 Next run the following command to fix permissions: 
 
 ```
-loki-launcher fix-perms <USER>
+sudo loki-launcher fix-perms <USER>
 ```
 
 Replacing `<USER>` with `snode` or the username that you created.
@@ -324,18 +319,6 @@ fixing blockchain.data_dir file /home/snode/.loki/lmdb
 fixing blockchain.data_dir file /home/snode/.loki/storage/storage.logs
 fixing blockchain.data_dir file /home/snode/.loki/storage
 fixing blockchain.data_dir file /home/snode/.loki
-```
-
-Once the permissions have been set let's change back to our other user `snode` by running the following command:
-
-```
-su - snode
-```
-
-Now let's get the loki-launcher started again:
-
-```
-sudo loki-launcher start
 ```
 
 #### 4.2 - Creating the Service File
@@ -784,6 +767,13 @@ Then run the following command to download the new binaries:
 
 ```
 loki-launcher download-binaries
+```
+
+Fix permissions for Lokinet if you aren't running as root, 
+`<USER>` should be replaced with the username your Service Node runs under - if you followed this guide it will be snode:
+
+```
+sudo loki-launcher fix-perms <USER>
 ```
 
 Start lokid.service again:
