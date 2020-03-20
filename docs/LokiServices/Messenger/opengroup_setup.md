@@ -1,6 +1,9 @@
-# Session OpenGroup Setup
+title: Loki Docs | Session | Open Group Setup guide
+description: An express REST API for serving persistence history public chat rooms for Session. These channels are not limited in size as they are hosted by your own server.
 
-An express REST API for serving persistence history public chat rooms for Session. These channels are not limited in size as they are hosted by your own server. Please be aware these are PUBLIC channels and sensitive private information should not be shared in this group format.
+# Session Open Group Setup
+
+An express REST API for serving persistence history public chat rooms for Session. Open groups are not limited in size as they are hosted by your own server. Please be aware these are PUBLIC groups and sensitive private information should not be shared in this group format.
 
 It's run by 2 daemons, the platform servers providing an ADN standard REST API and another with Session specific behaviors (crypto-key registration and enhanced moderation functions).
 

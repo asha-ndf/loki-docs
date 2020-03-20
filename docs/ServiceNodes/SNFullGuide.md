@@ -37,6 +37,13 @@ Full summary of Loki Service Node Requirements. This may change depending on Ser
 
 ---
 
+## Important Changes
+### 1.0.12(Loki 7.x series)
+
+- New port 22020 for loki-storage's new LMQ port
+
+- loki-storage 2.x won't start unless your file descriptors available are over 16k
+
 ## Overview
 
 To understand what a [Service Node](SNOverview.md) is, you can refer to the [whitepaper](https://loki.network/whitepaper) to get an in depth understanding. For now, all you need to know is that:
@@ -354,12 +361,6 @@ If you chose a username other than `snode` then change snode in the `User=` line
 Once completed, save the file and quit nano: `CTRL+X -> Y -> ENTER`.
 
 #### 4.3 - Enabling the Service File
-
-Reload systemd manager configuration (to make it re-read the new service file):
-
-```
-sudo systemctl daemon-reload
-```
 
 Enable lokid.service so that it starts automatically upon boot:
 
@@ -749,6 +750,8 @@ print_locked_stakes
 
 #### Updating your Binaries
 
+> IMPORTANT: Please check the [important changes](#important-changes) section at the top of this page to see the changes before running your updates.
+
 When new binaries are out we need to log into our server as the <user> which we initially set up our loki-launcher on.
 
 Run the following command to update our loki-launcher:
@@ -766,8 +769,15 @@ sudo systemctl stop lokid.service
 Then run the following command to download the new binaries:
 
 ```
-loki-launcher download-binaries
+sudo loki-launcher download-binaries
 ```
+Next we'll need to run check-systemd now to upgrade your nofile (file descriptor limit):
+
+```
+sudo loki-launcher check-systemd
+```
+
+> This next command is optional, try it if you run into issues.
 
 Fix permissions for Lokinet if you aren't running as root, 
 `<USER>` should be replaced with the username your Service Node runs under - if you followed this guide it will be snode:
@@ -787,7 +797,6 @@ If you are running loki-launcher as a service you can now reboot your computer a
 ```
 sudo reboot
 ```
-
 ---
 
 ### Default Directories for Loki Files
