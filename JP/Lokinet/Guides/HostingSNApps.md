@@ -40,35 +40,17 @@ sudo systemctl restart lokinet
 
 ## 2. SNAppのlokinetアドレスを見つける
 
-まず、プライベートトンネルアダプターが繋がっているIPアドレスを見つける必要があります：
+ホスト検索ツールを利用して現在のSNAppアドレスを見つけることができます：
 
 ```
-nslookup localhost.loki
+nslookup -type=cname localhost.loki 127.0.0.1 
 ```
 
-以下のような出力が表示されます：
-```
-Server:                127.0.0.53
-Address:        127.0.0.53#53
-
-Non-authoritative answer:
-Name:        localhost.loki
-Address: 10.0.0.1
-```
-
-以下のコマンドに、「Name: localhost.loki」の下に表示されるIPアドレスを入力する：
+Linuxでは、「dig」コマンドも使えます。クエリーに行うlokiアドレスは同じですが、他のインストールされているリゾルバーとのコンフリクトをよけるためリゾルバーは「127.3.2.1」というアドレスを利用します。
 
 ```
-nslookup 10.0.0.1
+dig @127.3.2.1 -t cname localhost.loki
 ```
-
-これでlokinetの公開鍵は表示されるでしょう：
-
-```
-1.0.0.10.in-addr.arpa        name = jnzd4izeja5p7cf81bsy4t97szxpye5sewch88hontpwj6jdfqby.loki.
-```
-
-この公開鍵はSNAppのURLです。Lokinetソフトウェアを利用するユーザーはこの鍵で秘匿サーバーにアクセスできます。
 
 ## 3. SNAppを作る
 ターミナルにこのコマンドを実行して、homeフォルダーに新しいディレクトリを作成する：
